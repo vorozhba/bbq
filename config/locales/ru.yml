@@ -41,6 +41,13 @@ ru:
               too_short: "слишком короткий"
             password_confirmation:
               confirmation: "Пароли не сопадают"
+        errors:
+          count:
+            zero: "ошибок"
+            one: "ошибка"
+            few: "ошибки"
+            many: "ошибок"
+            other: "ошибок"
 
     models:
       user: 'Пользователь'

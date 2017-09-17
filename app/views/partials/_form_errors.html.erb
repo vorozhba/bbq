@@ -2,9 +2,9 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
-    <div class="alert alert-danger">
+    <div class="alert alert-warning">
       <div class="lead buffer-bottom">
-        В вашей форме <%= errors.count %> ошибок
+        В вашей форме <%= errors.count %> <%= t('activerecord.errors.models.errors.count', count: errors.count) %>
       </div>
 
       <ul>
