@@ -12,6 +12,8 @@ gem 'devise'
 
 gem 'devise-i18n'
 
+gem 'rails-i18n'
+
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 
 gem 'puma', '~> 3.7'
