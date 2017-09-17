@@ -18,7 +18,13 @@
               <div class="buffer-both">
                 <%= link_to 'Изменить', edit_event_path(@event),
                             class: 'btn btn-primary' %>
+                <span title="Удалить событие">
+                  <%= link_to fa_icon('trash-o'), event_path(@event), method: :delete,
+                              data: {confirm: t('activerecord.controllers.events.del_confirmation')},
+                              class: 'fa-2x button-trash' %>
+                </span>
               </div>
+
           <% end %>
         </div>
       </div>
