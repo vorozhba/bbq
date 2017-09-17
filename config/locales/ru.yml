@@ -55,7 +55,7 @@ ru:
 
     attributes:
       user:
-        email: 'Email'
+        email: 'E-mail'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
