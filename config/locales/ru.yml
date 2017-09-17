@@ -32,12 +32,40 @@
 ru:
   hello: "Привет, Мир"
   activerecord:
-      errors:
-        models:
-          user:
-            attributes:
-              password:
-                too_short: "слишком короткий"
-              password_confirmation:
-                confirmation: "Пароли не сопадают"
 
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "слишком короткий"
+            password_confirmation:
+              confirmation: "Пароли не сопадают"
+
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+
+    controllers:
+      events:
+        created: 'Вы создали новое мероприятие'
+        updated: 'Вы обновили мероприятие'
+        destroyed: 'Вы удалили мероприятие :('
+      users:
+        updated: 'Вы обновили свой профиль'
+
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший программист'
