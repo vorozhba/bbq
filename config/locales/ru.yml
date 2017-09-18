@@ -33,6 +33,8 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      subscription:
+        check_email: 'Проверка E-mail:'
 
     controllers:
       events:
@@ -63,4 +65,4 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-      email_already_present: 'Укажите другой e-mail'
+      email_already_present: 'укажите другой e-mail'
