@@ -63,3 +63,4 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      email_already_present: 'Укажите другой e-mail'
