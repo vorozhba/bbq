@@ -6,7 +6,10 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:destroy]
 
   def create
-    # Болванка для новой подписки
+    if current_user_can_edit?(@event)
+      return redirect_to @event, alert: I18n.t('activerecord.controllers.subscriptions.current_user_error')
+    end
+
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
