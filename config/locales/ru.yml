@@ -30,6 +30,7 @@ ru:
         email: 'E-mail'
         name: 'Имя'
         password: 'Пароль'
+        avatar: 'Аватарка'
         password_confirmation: 'Подтверждение пароля'
       event:
         title: 'Название'
