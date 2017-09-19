@@ -67,7 +67,7 @@
           </p>
         </div>
       </div>
-      <% unless current_user_can_edit?(@event) %>
+      <% unless current_user_owns? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

@@ -5,11 +5,9 @@ class SubscriptionsController < ApplicationController
   # Задаем подписку, которую юзер хочет удалить
   before_action :set_subscription, only: [:destroy]
 
-  def create
-    if current_user_can_edit?(@event)
-      return redirect_to @event, alert: I18n.t('activerecord.controllers.subscriptions.current_user_error')
-    end
+  before_action :redirect_with_error, if: :current_user_owns?, only: [:create]
 
+  def create
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
@@ -35,6 +33,11 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
+  def redirect_with_error
+    redirect_to @event, alert: I18n.t('activerecord.controllers.subscriptions.current_user_error')
+  end
+
   def set_subscription
     @subscription = @event.subscriptions.find(params[:id])
   end
