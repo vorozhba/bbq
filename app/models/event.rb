@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   # У события много подписчиков (объекты User), через таблицу subscriptions,
   # по ключу user_id
   has_many :subscribers, through: :subscriptions, source: :user
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   validates :user, presence: true
 
