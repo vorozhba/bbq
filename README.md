@@ -4,6 +4,7 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
+* Production Links: https://go-bbq.herokuapp.com or http://go-bbq.corn4corn.ru
 
 * Ruby version
 
