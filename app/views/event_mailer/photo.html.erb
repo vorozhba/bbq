@@ -1,0 +1,14 @@
+<h1><%= t 'event_mailer.photo.new' %></h1>
+<p><%= t 'event_mailer.comment.author' %>: <strong><%= @photo.user.name %></strong></p>
+<%= "Новая фотография" %>
+<hr/>
+<%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
+<hr/>
+<%= t 'event_mailer.comment.event' %>
+<h3><%= @event.title %></h3>
+
+<%= t 'event_mailer.comment.datetime' %>
+<h4><%= l @event.datetime %></h4>
+
+<%= t 'event_mailer.comment.owner' %>
+<h4><%= @event.user.name %></h4>
