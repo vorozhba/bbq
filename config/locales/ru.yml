@@ -79,6 +79,10 @@ ru:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
 
+  photos:
+    photo:
+      del_confirmation: 'Вы точно хотите удалить фотографию?'
+
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
@@ -101,3 +105,4 @@ ru:
       owner: 'Организатор'
     photo:
       new: 'Новая фотография'
+
