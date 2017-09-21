@@ -37,6 +37,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пинкод доступа'
       subscription:
         user_name: 'Ваше имя'
         user_email: 'Ваш e-mail'
@@ -53,6 +54,7 @@ ru:
         updated: 'Вы обновили мероприятие'
         destroyed: 'Вы удалили мероприятие :('
         del_confirmation: 'Вы точно хотите удалить событие?'
+        wrong_pincode: 'Неверный пинкод!'
       users:
         updated: 'Вы обновили свой профиль'
       comments:
