@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
   before_action :set_new_photo, only: [:create]
-  
+
   def create
     unless current_user.present?
       return redirect_to @event, alert: I18n.t('activerecord.controllers.photos.current_user_error')
