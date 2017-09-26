@@ -2,11 +2,12 @@ class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
   before_action :set_new_photo, only: [:create]
-
-  # Действие для создания новой фотографии
-  # Обратите внимание, что фотку может сейчас добавить даже неавторизованный пользовать
+  
   def create
-    # Проставляем у фотографии пользователя
+    unless current_user.present?
+      return redirect_to @event, alert: I18n.t('activerecord.controllers.photos.current_user_error')
+    end
+
     @new_photo.user = current_user
 
     if  @new_photo.photo.url.present? && @new_photo.save
