@@ -1,22 +1,20 @@
 class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
+  before_action :set_new_photo, only: [:create]
 
   # Действие для создания новой фотографии
   # Обратите внимание, что фотку может сейчас добавить даже неавторизованный пользовать
   def create
-    # Создаем новую фотографию у нужного события @event
-    @new_photo = @event.photos.build(photo_params)
-
     # Проставляем у фотографии пользователя
     @new_photo.user = current_user
 
-    if @new_photo.save
+    if  @new_photo.photo.url.present? && @new_photo.save
       notify_new_photo(@event, @new_photo)
 
       redirect_to @event, notice: I18n.t('activerecord.controllers.photos.created')
     else
-      render 'events/show', alert: I18n.t('activerecord.controllers.photos.error')
+      redirect_to @event, alert: I18n.t('activerecord.controllers.photos.error')
     end
   end
 
@@ -52,10 +50,14 @@ class PhotosController < ApplicationController
   end
 
   def notify_new_photo(event, photo)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [photo.user.email]).uniq
 
     all_emails.each do |mail|
       EventMailer.photo(photo, event, mail).deliver_now
     end
+  end
+
+  def set_new_photo
+    @new_photo = @event.photos.build(photo_params)
   end
 end

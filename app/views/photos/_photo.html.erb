@@ -1,9 +1,11 @@
 <div class="event-photo">
   <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
+  <% if photo.photo.url.present? %>
   <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
       lightbox: "event", title: image_title, gallery: 'event-photos'
   } %>
-  <% if current_user_can_edit?(photo) %>
+  <% end %>
+  <% if photo.photo.url.present? && current_user_can_edit?(photo) %>
     <%= link_to(fa_icon('trash'), event_photo_path(photo.event, photo),
                 method: :delete, data: {confirm: t('photos.photo.del_confirmation')})
     %>
