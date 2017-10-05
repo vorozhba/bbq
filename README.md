@@ -1,25 +1,10 @@
-# BBQ
+# Веб-приложение "Шашлыки"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Версия Rails: 5.0.6
 
-Things you may want to cover:
-* Production Links: https://go-bbq.herokuapp.com or http://go-bbq.corn4corn.ru
+### Запуск в режиме development:
+    bundle exec rails db:migrate
+    bundle exec rails s
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Веб-сайт приложения:
+  [go-bbq](http://go-bbq.corn4corn.ru/)
